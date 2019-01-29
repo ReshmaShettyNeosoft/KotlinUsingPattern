@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="homeViewModel"
+            type="com.droidipc.kotlinusingpattern.home.HomeViewModel" />
+        <variable
+            name="baseViewModel"
+            type="com.droidipc.kotlinusingpattern.home.BaseViewModel" />
+        <variable
+            name="position"
+            type="java.lang.Integer" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:onClick="@{()->homeViewModel.onRowClick(position)}"
+        bind:toastMessage="@{homeViewModel.toastMessage}">
+        <TextView
+            android:id="@+id/fruitNameTextview"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@{homeViewModel.getFruitByPosition(position).fruitName}"/>
+
+    </LinearLayout>
+</layout>
