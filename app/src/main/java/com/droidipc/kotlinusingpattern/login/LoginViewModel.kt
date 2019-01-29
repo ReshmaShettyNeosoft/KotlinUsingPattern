@@ -1,14 +1,10 @@
 package com.droidipc.kotlinusingpattern.login
 
-import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import android.databinding.ObservableInt
 import com.droidipc.kotlinusingpattern.BR
-import com.droidipc.kotlinusingpattern.KotlinUsingPatternApplication
 import com.droidipc.kotlinusingpattern.R
-import com.droidipc.kotlinusingpattern.ResourceProvider
 
 import com.droidipc.kotlinusingpattern.service.StatusInterface
 
