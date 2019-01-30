@@ -27,7 +27,9 @@ fun display(view: View, msg: String?) {
     if (msg != null)
         Toast.makeText(view.context, msg, Toast.LENGTH_SHORT).show()
     //check login success
-    var intent = Intent(view.context, HomeActivity::class.java)
-    view.context.startActivity(intent)
+   if(msg.equals("User login is successful.")) {
+       var intent = Intent(view.context, HomeActivity::class.java)
+       view.context.startActivity(intent)
+   }
 }
 
