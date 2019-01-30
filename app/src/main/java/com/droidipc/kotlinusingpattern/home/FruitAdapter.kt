@@ -31,14 +31,9 @@ public class FruitAdapter: RecyclerView.Adapter<FruitAdapter.GenericViewHolder>{
         p0.bind(viewModel, p1)
     }
 
-
-    private fun getLayoutIdForPosition(position: Int): Int {
-        return layoutId
-    }
-
     override
     fun getItemViewType(position: Int): Int {
-        return getLayoutIdForPosition(position)
+        return layoutId
     }
 
     override fun getItemCount(): Int {

@@ -1,4 +1,4 @@
-package com.droidipc.kotlinusingpattern.login
+package com.droidipc.kotlinusingpattern.login.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

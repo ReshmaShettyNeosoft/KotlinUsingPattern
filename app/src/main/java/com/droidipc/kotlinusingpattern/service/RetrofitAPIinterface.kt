@@ -1,6 +1,6 @@
 package com.droidipc.kotlinusingpattern.service
 
-import com.droidipc.kotlinusingpattern.login.LoginResponseDTO
+import com.droidipc.kotlinusingpattern.login.model.LoginResponseDTO
 import retrofit2.Call
 import retrofit2.http.*
 

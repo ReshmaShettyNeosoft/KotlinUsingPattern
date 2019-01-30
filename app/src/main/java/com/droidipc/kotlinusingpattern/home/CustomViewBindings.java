@@ -17,7 +17,6 @@ public class CustomViewBindings {
 
     @BindingAdapter("toastMessage")
     public static void display(View view, String msg) {
-        if (msg != null)
-            Toast.makeText(view.getContext(), msg, Toast.LENGTH_SHORT).show();
+        //if (msg != null) Toast.makeText(view.getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 }

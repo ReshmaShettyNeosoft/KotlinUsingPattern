@@ -3,4 +3,5 @@
     <string name="fill_detail_txt">please Fill all detail</string>
     <string name="registration_failed_txt">Registration failed</string>
     <string name="login_txt">Login</string>
+    <string name="login_successful_txt">User login is successful.</string>
 </resources>

@@ -5,9 +5,6 @@ import retrofit2.Retrofit
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
-
-
-
  class APIClient {
 
     private var retrofit: Retrofit? = null
@@ -26,3 +23,4 @@ import okhttp3.logging.HttpLoggingInterceptor
         return retrofit
     }
 }
+

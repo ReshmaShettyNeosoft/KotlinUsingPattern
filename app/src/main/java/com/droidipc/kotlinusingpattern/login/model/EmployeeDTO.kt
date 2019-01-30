@@ -1,4 +1,4 @@
-package com.droidipc.kotlinusingpattern.login
+package com.droidipc.kotlinusingpattern.login.model
 
 import android.util.Log
 import com.droidipc.kotlinusingpattern.service.APIClient

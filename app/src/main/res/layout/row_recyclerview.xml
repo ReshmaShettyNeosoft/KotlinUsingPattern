@@ -6,9 +6,6 @@
             name="homeViewModel"
             type="com.droidipc.kotlinusingpattern.home.HomeViewModel" />
         <variable
-            name="baseViewModel"
-            type="com.droidipc.kotlinusingpattern.home.BaseViewModel" />
-        <variable
             name="position"
             type="java.lang.Integer" />
     </data>

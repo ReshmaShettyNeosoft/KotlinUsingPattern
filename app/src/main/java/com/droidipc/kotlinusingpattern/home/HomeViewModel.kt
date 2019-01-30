@@ -1,5 +1,6 @@
 package com.droidipc.kotlinusingpattern.home
 
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.databinding.BaseObservable
@@ -13,16 +14,15 @@ class HomeViewModel : BaseObservable {
     var title: String = "Fruits"
     var fruitName: String? = null
     var mutableLiveData = MutableLiveData<ArrayList<FruitsDto>>()
-    var arrayList: ArrayList<FruitsDto>? = null
+    var arrayList: ArrayList<FruitsDto> = ArrayList()
     var fruitAdapter: FruitAdapter? = null
-    var baseViewModel: BaseViewModel? = null
+
     @Bindable
     open var toastMessage: String = ""
 
     fun initialization() {
         arrayList = getFruitArrayList()
         fruitAdapter = FruitAdapter(R.layout.row_recyclerview, this, arrayList)
-        baseViewModel = BaseViewModel()
     }
 
     constructor() : super()
@@ -34,34 +34,35 @@ class HomeViewModel : BaseObservable {
         return fruitAdapter
     }
 
-    //Get list of Fruits
-    fun getFruitList(): MutableLiveData<ArrayList<FruitsDto>> {
-        for (i in 1..5) {
-            var fruitDto = FruitsDto("Fruit")
-            arrayList?.add(fruitDto)
-        }
-        mutableLiveData.value = arrayList
+    fun getMutableLiveDataList(): MutableLiveData<ArrayList<FruitsDto>> {
         return mutableLiveData
     }
-
 
     fun getFruitByPosition(position: Int): FruitsDto? {
         return arrayList?.get(position)
     }
 
-
     //Get list of Fruits
-    fun getFruitArrayList(): ArrayList<FruitsDto>? {
-        var arrayListdata: ArrayList<FruitsDto>? = ArrayList()
-        for (i in 1..5) {
-            var fruitDto = FruitsDto("Fruit$i")
-            arrayListdata?.add(fruitDto)
-        }
-        return arrayListdata
+    fun getFruitArrayList(): ArrayList<FruitsDto> {
+        for (i in 1..5)
+            arrayList.add(FruitsDto("Fruit$i"))
+        return arrayList
     }
 
     fun onRowClick(position: Int) {
-        toastMessage = "Selected fruit :- ${arrayList!!.get(position).fruitName}"
+        mutableLiveData.value = arrayList
+        toastMessage = "Selected fruit :- ${arrayList.get(position).fruitName}"
         notifyPropertyChanged(BR.toastMessage)
     }
+
+    //Get list of Fruits
+    fun getFruitList(): MutableLiveData<ArrayList<FruitsDto>> {
+        for (i in 1..5) {
+            var fruitDto = FruitsDto("Fruit")
+            arrayList.add(fruitDto)
+        }
+        mutableLiveData.value = arrayList
+        return mutableLiveData
+    }
+
 }
